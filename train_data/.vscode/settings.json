@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/hungtran/opt/anaconda3/envs/py2/bin/python"
+    "python.pythonPath": "/Users/hungtran/opt/anaconda3/envs/py2/bin/python",
+    "git.ignoreLimitWarning": true
 }

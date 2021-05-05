@@ -130,3 +130,7 @@ dmypy.json
 train_data/Test/.DS_Store
 train_data/.DS_Store
 .DS_Store
+generate data/data
+train_data/Test
+train_data/Train
+train_data/chinese.mlmodel
