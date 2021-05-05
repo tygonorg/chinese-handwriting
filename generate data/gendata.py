@@ -65,3 +65,9 @@ for line in lines:
     genimage(fontname="wts11.ttf",text=line.rstrip(),fontsize=50)
     genimage(fontname="simhei.ttf",text=line.rstrip(),fontsize=50)
     genimage(fontname="wt064.ttf",text=line.rstrip(),fontsize=50)
+    genimage(fontname="simsun.ttc",text=line.rstrip(),fontsize=50)
+    genimage(fontname="WCL-03.ttf",text=line.rstrip(),fontsize=50)
+    genimage(fontname="wt011.ttf",text=line.rstrip(),fontsize=50)
+    genimage(fontname="wt003.ttf",text=line.rstrip(),fontsize=50)
+    
+    
