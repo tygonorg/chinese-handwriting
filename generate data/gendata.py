@@ -43,6 +43,13 @@ def genimage(fontname,text,fontsize):
     img = np.array(img_pil)
 
     cv2.imwrite("data/"+text+"/"+fontname+".png", img)
+    #check if blank img
+    imgcheck = Image.open("data/"+text+"/"+fontname+".png")
+    clrs = imgcheck.getcolors()
+    if len(clrs) == 1:
+        print("file is blank remove file "+text+fontname+".png")
+        os.remove("data/"+text+"/"+fontname+".png")
+
 lines = []
 with open('listword.txt') as f:
     lines = f.readlines()
