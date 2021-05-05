@@ -15,6 +15,8 @@
 		C92457CC2642C3A40018F381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92457CA2642C3A40018F381 /* LaunchScreen.storyboard */; };
 		C92457D52642C42F0018F381 /* ChineseHandWrittingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92457D32642C42F0018F381 /* ChineseHandWrittingViewController.swift */; };
 		C92457D62642C42F0018F381 /* ChineseHandWrittingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92457D42642C42F0018F381 /* ChineseHandWrittingViewController.xib */; };
+		C999EEE22642DF9100CA5235 /* cl.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C999EEE12642DF9100CA5235 /* cl.mlmodel */; };
+		C999EEE72642E38C00CA5235 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999EEE62642E38C00CA5235 /* CGImagePropertyOrientation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C92457CD2642C3A40018F381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92457D32642C42F0018F381 /* ChineseHandWrittingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseHandWrittingViewController.swift; sourceTree = "<group>"; };
 		C92457D42642C42F0018F381 /* ChineseHandWrittingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChineseHandWrittingViewController.xib; sourceTree = "<group>"; };
+		C999EEE12642DF9100CA5235 /* cl.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cl.mlmodel; sourceTree = "<group>"; };
+		C999EEE62642E38C00CA5235 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		C92457BE2642C3A30018F381 /* ChineseHandWriting */ = {
 			isa = PBXGroup;
 			children = (
+				C999EEE02642DF7D00CA5235 /* model */,
 				C92457BF2642C3A30018F381 /* AppDelegate.swift */,
 				C92457C12642C3A30018F381 /* SceneDelegate.swift */,
 				C92457C32642C3A30018F381 /* ViewController.swift */,
@@ -69,8 +74,17 @@
 				C92457CD2642C3A40018F381 /* Info.plist */,
 				C92457D32642C42F0018F381 /* ChineseHandWrittingViewController.swift */,
 				C92457D42642C42F0018F381 /* ChineseHandWrittingViewController.xib */,
+				C999EEE62642E38C00CA5235 /* CGImagePropertyOrientation.swift */,
 			);
 			path = ChineseHandWriting;
+			sourceTree = "<group>";
+		};
+		C999EEE02642DF7D00CA5235 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C999EEE12642DF9100CA5235 /* cl.mlmodel */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +161,8 @@
 				C92457C42642C3A30018F381 /* ViewController.swift in Sources */,
 				C92457C02642C3A30018F381 /* AppDelegate.swift in Sources */,
 				C92457C22642C3A30018F381 /* SceneDelegate.swift in Sources */,
+				C999EEE22642DF9100CA5235 /* cl.mlmodel in Sources */,
+				C999EEE72642E38C00CA5235 /* CGImagePropertyOrientation.swift in Sources */,
 				C92457D52642C42F0018F381 /* ChineseHandWrittingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChineseHandWriting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChineseHandWriting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

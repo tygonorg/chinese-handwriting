@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,10 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChineseHandWrittingViewController" customModule="ChineseHandWriting" customModuleProvider="target">
             <connections>
+                <outlet property="btn0" destination="q98-3U-xu8" id="AXC-BU-ADx"/>
+                <outlet property="btn1" destination="sWv-2M-oJ3" id="yJe-zA-f9L"/>
+                <outlet property="btn2" destination="3Tk-sI-iXq" id="qlY-Hh-8zq"/>
+                <outlet property="btn3" destination="lND-mv-c9s" id="IHY-ub-5lU"/>
+                <outlet property="btn4" destination="K9Z-4Y-uCT" id="EVL-hQ-GXa"/>
+                <outlet property="drawCanvasView" destination="RNB-6g-5pn" id="V6u-KH-RSQ"/>
                 <outlet property="eraser_bottom" destination="dcc-sf-zqO" id="o7o-Y4-Xd7"/>
                 <outlet property="img_display" destination="9Le-Mt-eFI" id="nqO-m8-fws"/>
                 <outlet property="pen_bottom" destination="wJs-NC-C6K" id="6IK-XH-66e"/>
-                <outlet property="tempImageView" destination="RNB-6g-5pn" id="V6u-KH-RSQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,11 +28,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RNB-6g-5pn">
-                    <rect key="frame" x="0.0" y="253" width="414" height="400"/>
+                    <rect key="frame" x="0.0" y="303" width="414" height="300"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="400" id="faO-UD-vQN"/>
+                        <constraint firstAttribute="height" constant="300" id="tB0-e2-H6l"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THj-B6-Toc" userLabel="Button_0">
@@ -53,12 +58,76 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pen" translatesAutoresizingMaskIntoConstraints="NO" id="9Le-Mt-eFI">
-                    <rect key="frame" x="314" y="661" width="100" height="60"/>
+                    <rect key="frame" x="314" y="611" width="100" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="8Fg-Yk-1CN"/>
                         <constraint firstAttribute="width" constant="100" id="cD6-WH-VcK"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psh-Dd-dnw">
+                    <rect key="frame" x="0.0" y="603" width="314" height="60"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="center" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-ks-mfT">
+                            <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q98-3U-xu8">
+                                    <rect key="frame" x="0.0" y="0.0" width="55" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="tintColor" red="0.19042073500000001" green="0.07278273566" blue="0.23662077079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="蓼">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWv-2M-oJ3">
+                                    <rect key="frame" x="65" y="0.0" width="54.5" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="tintColor" red="0.19042073500000001" green="0.07278273566" blue="0.23662077079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="稞">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tk-sI-iXq">
+                                    <rect key="frame" x="129.5" y="0.0" width="55" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="tintColor" red="0.19042073500000001" green="0.07278273566" blue="0.23662077079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="蓼">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lND-mv-c9s">
+                                    <rect key="frame" x="194.5" y="0.0" width="54.5" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="tintColor" red="0.19042073500000001" green="0.07278273566" blue="0.23662077079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="蓼">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9Z-4Y-uCT">
+                                    <rect key="frame" x="259" y="0.0" width="55" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="tintColor" red="0.19042073500000001" green="0.07278273566" blue="0.23662077079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="蓼">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="4hk-ks-mfT" firstAttribute="top" secondItem="psh-Dd-dnw" secondAttribute="top" id="OX9-zA-gDp"/>
+                        <constraint firstAttribute="trailing" secondItem="4hk-ks-mfT" secondAttribute="trailing" id="VyG-y5-ma7"/>
+                        <constraint firstAttribute="height" constant="60" id="mxk-81-SQH"/>
+                        <constraint firstAttribute="bottom" secondItem="4hk-ks-mfT" secondAttribute="bottom" id="qod-1A-cle"/>
+                        <constraint firstItem="4hk-ks-mfT" firstAttribute="leading" secondItem="psh-Dd-dnw" secondAttribute="leading" id="vD0-0E-8Hy"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -69,7 +138,10 @@
                 <constraint firstItem="9Le-Mt-eFI" firstAttribute="top" secondItem="RNB-6g-5pn" secondAttribute="bottom" constant="8" symbolic="YES" id="KHg-aG-E4m"/>
                 <constraint firstItem="THj-B6-Toc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="XuO-8w-jdB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rn6-PU-kK2" secondAttribute="bottom" constant="20" id="dcc-sf-zqO"/>
+                <constraint firstItem="9Le-Mt-eFI" firstAttribute="leading" secondItem="psh-Dd-dnw" secondAttribute="trailing" id="qkF-uN-VlU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Le-Mt-eFI" secondAttribute="trailing" id="rqB-OM-0Q1"/>
+                <constraint firstItem="psh-Dd-dnw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sx7-Tk-Szz"/>
+                <constraint firstItem="psh-Dd-dnw" firstAttribute="top" secondItem="RNB-6g-5pn" secondAttribute="bottom" id="ui3-cY-KCz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="THj-B6-Toc" secondAttribute="bottom" constant="20" id="wJs-NC-C6K"/>
                 <constraint firstItem="rn6-PU-kK2" firstAttribute="leading" secondItem="THj-B6-Toc" secondAttribute="trailing" constant="20" id="xHx-ei-Aye"/>
             </constraints>
@@ -79,8 +151,14 @@
     <resources>
         <image name="eraser" width="55" height="167"/>
         <image name="pen" width="53" height="332"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
