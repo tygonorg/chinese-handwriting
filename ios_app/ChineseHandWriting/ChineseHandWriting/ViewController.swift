@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 
     @IBAction func begin_handwriting(_ sender: Any) {
         let controller = ChineseHandWrittingViewController(nibName: "ChineseHandWrittingViewController", bundle: nil)
+        controller.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+
         self.present(controller, animated: true, completion: nil)
     }
     override func viewDidLoad() {

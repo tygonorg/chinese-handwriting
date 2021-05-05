@@ -4,6 +4,9 @@ import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 def checkblankimage(filename):
+    if filename.endswith(".DS_Store"):
+        os.remove(filename)
+        return
     imgcheck = Image.open(filename)
     clrs = imgcheck.getcolors()
     if len(clrs) == 1:
