@@ -1,28 +1,24 @@
-# from PIL import Image,ImageDraw,ImageFont
-# import  cv2
-# import numpy as np
-# import matplotlib.pyplot as plt
-# img = cv2.imread("2.png")#If you want to read the Chinese name image file, you can use cv2.imdecode()
-# pil_img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)#cv2 and PIL color hex code storage order is different, need to turn RGB mode
-# pilimg = Image.fromarray(pil_img)#Image.fromarray() converts the array type to an image format, as opposed to np.array()
-# Draw = ImageDraw.Draw(pilimg)#PIL print Chinese characters on the picture
-# font = ImageFont.truetype("MaShanZheng-Regular.ttf",50,encoding="utf-8")#Parameter 1: Font file path, parameter 2: Font size; Windows system "simhei.ttf" is stored by default in path: C: \Windows\Fonts
-# Draw.text((0,0),"Viking", (255,0,0),font=font)
-# cv2img = cv2.cvtColor(np.array(pilimg),cv2.COLOR_RGB2BGR)# Convert the image to an array format that cv2.imshow() can display
-# cv2.imshow("hanzi",cv2img)
-# cv2.waitKey()
-# cv2.destroyAllWindows()
-
-
 import time
 import os
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
+from fontTools.ttLib import TTFont
 
-## Make canvas and set the color
+#check blank char
+def char_in_font(unicode_char, font):
+    for cmap in font['cmap'].tables:
+        if cmap.isUnicode():
+            if ord(unicode_char) in cmap.cmap:
+                return True
+    return False
 
-def genimage(fontname,text,fontsize):
+def genimage(fontname,text,fontsize,dirname):
+    #check blank char 
+    f = TTFont(fontname)
+    if char_in_font(unicode_char=text,font=f) == False:
+        print("character "+text+" not found in font"+fontname)
+        return
     img = np.zeros((60,60,3),np.uint8)
     img.fill(255)
     b,g,r,a = 0,255,0,0
@@ -41,39 +37,38 @@ def genimage(fontname,text,fontsize):
     draw.text(((60-w)/2, (60-h)/2),  text, font = font, fill = 0)
 
     img = np.array(img_pil)
-
-    cv2.imwrite("data/"+text+"/"+fontname+".png", img)
+    cv2.imwrite(dirname+"/"+fontname+".png", img)
     #check if blank img
-    imgcheck = Image.open("data/"+text+"/"+fontname+".png")
+    imgcheck = Image.open(dirname+"/"+fontname+".png")
     clrs = imgcheck.getcolors()
     if len(clrs) == 1:
         print("file is blank remove file "+text+fontname+".png")
-        os.remove("data/"+text+"/"+fontname+".png")
+        os.remove(dirname+"/"+fontname+".png")
 
 lines = []
 with open('listword.txt') as f:
     lines = f.readlines()
+dirName = "../train_data/Train/"
+# dirName = "data/"
 for line in lines:
-    dirName = "data/"+line.rstrip()
-    if not os.path.exists(dirName):
-        os.mkdir(dirName)
-        print("Directory " , dirName ,  " Created ")
+    d = dirName+line.rstrip()
+    if not os.path.exists(d):
+        os.mkdir(d)
+        print("Directory " , d ,  " Created ")
     else:    
-        print("Directory " , dirName ,  " already exists")
-    genimage(fontname="MaShanZheng-Regular.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="NotoSansSC-Regular.otf",text=line.rstrip(),fontsize=45)
-    genimage(fontname="ZCOOLQingKeHuangYou-Regular.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="LongCang-Regular.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="LiuJianMaoCao-Regular.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="ZhiMangXing-Regular.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="ZCOOLKuaiLe-Regular.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="SentyWEN2017.ttf",text=line.rstrip(),fontsize=40)
-    genimage(fontname="0.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="wts11.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="simhei.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="wt064.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="simsun.ttc",text=line.rstrip(),fontsize=50)
-    genimage(fontname="wt011.ttf",text=line.rstrip(),fontsize=50)
-    genimage(fontname="wt003.ttf",text=line.rstrip(),fontsize=50)
-    
-    
+        print("Directory " , d ,  " already exists")
+    genimage(fontname="MaShanZheng-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="NotoSansSC-Regular.otf",text=line.rstrip(),fontsize=45,dirname=d)
+    genimage(fontname="ZCOOLQingKeHuangYou-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="LongCang-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="LiuJianMaoCao-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="ZhiMangXing-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="ZCOOLKuaiLe-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="SentyWEN2017.ttf",text=line.rstrip(),fontsize=40,dirname=d)
+    genimage(fontname="0.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="wts11.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="simhei.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="wt064.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="wt011.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="wt003.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    genimage(fontname="DroidSansFallbackFull.ttf",text=line.rstrip(),fontsize=50,dirname=d)
