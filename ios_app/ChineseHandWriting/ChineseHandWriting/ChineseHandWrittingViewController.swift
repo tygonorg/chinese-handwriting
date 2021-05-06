@@ -29,7 +29,8 @@ class ChineseHandWrittingViewController: UIViewController {
     /// - Tag: MLModelSetup
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
-            let model = try VNCoreMLModel(for: cl().model)
+            let config = MLModelConfiguration()
+            let model = try VNCoreMLModel(for: cl(configuration:config ).model)
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                 self?.processClassifications(for: request, error: error)
             })
