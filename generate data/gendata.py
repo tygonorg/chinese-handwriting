@@ -48,8 +48,8 @@ def genimage(fontname,text,fontsize,dirname):
 lines = []
 with open('listword.txt') as f:
     lines = f.readlines()
-# dirName = "../train_data/Train/"
-dirName = "data1/"
+dirName = "../train_data/Train/"
+#dirName = "data1/"
 
 relevant_path = "."
 included_extensions = ['ttf','otf']

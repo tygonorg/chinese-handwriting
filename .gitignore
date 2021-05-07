@@ -135,3 +135,4 @@ train_data/Test
 train_data/Train
 train_data/chinese.mlmodel
 ios_app/ChineseHandWriting/ChineseHandWriting.xcodeproj/project.xcworkspace/xcuserdata
+generate data/data1
