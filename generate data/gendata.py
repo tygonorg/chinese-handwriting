@@ -48,8 +48,16 @@ def genimage(fontname,text,fontsize,dirname):
 lines = []
 with open('listword.txt') as f:
     lines = f.readlines()
-dirName = "../train_data/Train/"
-# dirName = "data/"
+# dirName = "../train_data/Train/"
+dirName = "data1/"
+
+relevant_path = "."
+included_extensions = ['ttf','otf']
+file_names = [fn for fn in os.listdir(relevant_path)
+              if any(fn.endswith(ext) for ext in included_extensions)]
+print(file_names)
+
+
 for line in lines:
     d = dirName+line.rstrip()
     if not os.path.exists(d):
@@ -57,18 +65,5 @@ for line in lines:
         print("Directory " , d ,  " Created ")
     else:    
         print("Directory " , d ,  " already exists")
-    genimage(fontname="MaShanZheng-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="NotoSansSC-Regular.otf",text=line.rstrip(),fontsize=45,dirname=d)
-    genimage(fontname="ZCOOLQingKeHuangYou-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="LongCang-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="LiuJianMaoCao-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="ZhiMangXing-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="ZCOOLKuaiLe-Regular.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="SentyWEN2017.ttf",text=line.rstrip(),fontsize=40,dirname=d)
-    genimage(fontname="0.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="wts11.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="simhei.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="wt064.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="wt011.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="wt003.ttf",text=line.rstrip(),fontsize=50,dirname=d)
-    genimage(fontname="DroidSansFallbackFull.ttf",text=line.rstrip(),fontsize=50,dirname=d)
+    for font in file_names:
+        genimage(fontname=font,text=line.rstrip(),fontsize=50,dirname=d)

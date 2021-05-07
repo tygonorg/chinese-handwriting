@@ -30,7 +30,7 @@ class ChineseHandWrittingViewController: UIViewController {
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
             let config = MLModelConfiguration()
-            let model = try VNCoreMLModel(for: cl(configuration:config ).model)
+            let model = try VNCoreMLModel(for: Mchinese(configuration:config ).model)
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                 self?.processClassifications(for: request, error: error)
             })
@@ -212,6 +212,48 @@ class ChineseHandWrittingViewController: UIViewController {
         drawLine(from: lastPoint, to: currentPoint)
         lastPoint = currentPoint
     }
+    
+    func takeSnapshotOfView(view:UIView) -> UIImage? {
+           UIGraphicsBeginImageContext(CGSize(width: view.frame.size.width, height: view.frame.size.height))
+           view.drawHierarchy(in: CGRect(x: 0.0, y: 0.0, width: view.frame.size.width, height: view.frame.size.height), afterScreenUpdates: true)
+           let image = UIGraphicsGetImageFromCurrentImageContext()
+           UIGraphicsEndImageContext()
+           return image
+       }
+
+    
+    @IBAction func saveimg(_ sender: Any) {
+//        let snapshot = self.drawCanvasView.snapshotView(afterScreenUpdates: false)
+//
+//        UIGraphicsBeginImageContext(snapshot!.bounds.size);
+//        snapshot!.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let screenShot =  self.takeSnapshotOfView(view: self.drawCanvasView)
+//        UIGraphicsEndImageContext();
+        
+       
+
+        
+        
+//        UIGraphicsBeginImageContext(drawCanvasView.frame.size)
+//        let image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+        UIImageWriteToSavedPhotosAlbum(screenShot!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+
+        
+    }
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            print("ERROR: \(error)")
+        }
+        else {
+            self.showAlert("Image saved", message: "The iamge is saved into your Photo Library.")
+        }
+    }
+    private func showAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !swiped {
             // draw a single point
@@ -228,11 +270,12 @@ class ChineseHandWrittingViewController: UIViewController {
             return
            // lastPoint = touch.location(in: tempImageView)
         }
+        let screenShot =  self.takeSnapshotOfView(view: self.drawCanvasView)
         // Merge tempImageView into mainImageView
-        UIGraphicsBeginImageContext(drawCanvasView.frame.size)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        updateClassifications(for: image!)
+//        UIGraphicsBeginImageContext(drawCanvasView.frame.size)
+//        let image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+        updateClassifications(for: screenShot!)
         //
         //      tempImageView.image = nil
     }

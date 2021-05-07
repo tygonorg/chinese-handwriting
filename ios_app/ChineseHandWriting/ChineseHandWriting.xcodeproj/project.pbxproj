@@ -15,8 +15,8 @@
 		C92457CC2642C3A40018F381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92457CA2642C3A40018F381 /* LaunchScreen.storyboard */; };
 		C92457D52642C42F0018F381 /* ChineseHandWrittingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92457D32642C42F0018F381 /* ChineseHandWrittingViewController.swift */; };
 		C92457D62642C42F0018F381 /* ChineseHandWrittingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92457D42642C42F0018F381 /* ChineseHandWrittingViewController.xib */; };
-		C999EEE22642DF9100CA5235 /* cl.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C999EEE12642DF9100CA5235 /* cl.mlmodel */; };
 		C999EEE72642E38C00CA5235 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999EEE62642E38C00CA5235 /* CGImagePropertyOrientation.swift */; };
+		C999EEEC26450EDB00CA5235 /* Mchinese.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C999EEEB26450EDB00CA5235 /* Mchinese.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		C92457CD2642C3A40018F381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92457D32642C42F0018F381 /* ChineseHandWrittingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseHandWrittingViewController.swift; sourceTree = "<group>"; };
 		C92457D42642C42F0018F381 /* ChineseHandWrittingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChineseHandWrittingViewController.xib; sourceTree = "<group>"; };
-		C999EEE12642DF9100CA5235 /* cl.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = cl.mlmodel; sourceTree = "<group>"; };
 		C999EEE62642E38C00CA5235 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
+		C999EEEB26450EDB00CA5235 /* Mchinese.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Mchinese.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 		C999EEE02642DF7D00CA5235 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				C999EEE12642DF9100CA5235 /* cl.mlmodel */,
+				C999EEEB26450EDB00CA5235 /* Mchinese.mlmodel */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -161,8 +161,8 @@
 				C92457C42642C3A30018F381 /* ViewController.swift in Sources */,
 				C92457C02642C3A30018F381 /* AppDelegate.swift in Sources */,
 				C92457C22642C3A30018F381 /* SceneDelegate.swift in Sources */,
-				C999EEE22642DF9100CA5235 /* cl.mlmodel in Sources */,
 				C999EEE72642E38C00CA5235 /* CGImagePropertyOrientation.swift in Sources */,
+				C999EEEC26450EDB00CA5235 /* Mchinese.mlmodel in Sources */,
 				C92457D52642C42F0018F381 /* ChineseHandWrittingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

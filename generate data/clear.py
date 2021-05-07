@@ -7,16 +7,16 @@ def checkblankimage(filename):
     if filename.endswith(".DS_Store"):
         os.remove(filename)
         return
-    # if filename.endswith(".ttf.png"):
-    #     os.remove(filename)
-    #     return
-    # if filename.endswith(".ttc.png"):
-    #     os.remove(filename)
-    #     return
-    # if filename.endswith(".otf.png"):
-    #     os.remove(filename)
-    #     return
-    # return
+    if filename.endswith(".ttf.png"):
+        os.remove(filename)
+        return
+    if filename.endswith(".ttc.png"):
+        os.remove(filename)
+        return
+    if filename.endswith(".otf.png"):
+        os.remove(filename)
+        return
+    return
     imgcheck = Image.open(filename)
     clrs = imgcheck.getcolors()
     if len(clrs) == 1:
